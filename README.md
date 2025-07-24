@@ -107,7 +107,7 @@ ffmpeg -framerate 5 -i %04d.jpg -c:v libx264 -pix_fmt yuv420p output.mp4
 ---
 
 
-## ✅ Outcome
+## Outcome
 
 - Successfully segmented frames using YOLOv8.
 - Generated videos of segmented frames from both dynamic (video) and static (image) sources.
