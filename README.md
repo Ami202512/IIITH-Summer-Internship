@@ -228,4 +228,55 @@ The YOLOv8n model trained on the African Wildlife dataset performed very well, a
 
 ---
 
+## Task 4: Custom Dataset Creation and YOLOv8 Training
+
+**Objective:**  
+To create a custom object detection dataset from a YouTube video, annotate it, train a YOLOv8 model on it, and test predictions.
+
+### Steps Involved:
+
+1. **Video to Image Conversion:**  
+   A YouTube video of an aquarium scene was downloaded and split into frames using `yt-dlp` and `ffmpeg`.
+
+2. **Dataset Creation & Annotation:**  
+   - Selected frames were uploaded to [Roboflow](https://roboflow.com/).
+   - Annotated manually using bounding boxes for:
+     - `fish`
+     - `starfish`
+     - `stingray`
+   - Exported the dataset in YOLOv8 format with `train`, `valid`, and `test` splits.
+
+3. **Training the Model:**  
+   - YOLOv8s model was used for training.
+   - Custom `underwater3.yaml` config was created on-the-fly inside the training script.
+   - Trained for **30 epochs** on the dataset with image size `640`.
+
+4. **Testing and Predictions:**  
+   - The best model checkpoint was used to predict on test images.
+   - Predictions were saved and a few were visualized.
+
+---
+
+### Sample Predictions
+
+Here are some results from the model:
+
+<p align="center">
+  <img src="Task 4/predictions/1.jpg" width="30%"/>
+  <img src="Task 4/predictions/2.jpg" width="30%"/>
+  <img src="Task 4/predictions/3.jpg" width="30%"/>
+</p>
+
+---
+
+### 📈 Training Results
+
+<img src="Task 4/results.png" width="80%"/>
+
+---
+
+### Code
+
+The full pipeline from training to prediction is available in  
+`Task 4/marine.py`.
 
